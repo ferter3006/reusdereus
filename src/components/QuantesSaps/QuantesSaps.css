@@ -1,0 +1,85 @@
+.titulsQuantesSaps {
+    padding: 0px;
+    padding-bottom: 4px;
+    background-color: purple;
+    color: white
+}
+
+.opcioQuantesSaps {
+    margin: 3px auto;
+    display: inline-block;
+    border-radius: 10px;
+    width: 70%;
+    padding: 5px 0px;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: rgb(88, 237, 153);
+}
+
+.opcioQuantesSaps:hover {
+    cursor: pointer;
+    background-color: aqua;
+}
+
+.opcioQuantesSaps:active {
+    background-color: tomato;
+}
+
+
+
+.masmenos {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin: 0px 5px;
+    font-weight: 600;
+    font-size: 34px;
+}
+
+.mas {
+    color: green;
+}
+
+.menos {
+    color: red;
+}
+
+.respostesDuel {
+    background-color: antiquewhite;
+    padding: 5px;    
+}
+
+.opcionsDuel {
+    display: inline-block;
+    width: 40%;
+    background-color: #3052b7;
+    color: white;
+    padding: 15px 0px;
+    border-radius: 15px;
+    margin: 3px;
+
+}
+
+.espai{
+    margin-top: 30px;
+}
+
+.font {
+    padding: 4px 15px;
+    background-color: tomato;
+    color: aliceblue;
+    font-weight: 600;
+    width: auto;
+    display: inline-block;
+    margin-top: 8px;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+.mesajeAlerta{
+    color: red;
+    text-transform: uppercase;
+    margin: 0px;
+    font-weight: 600;
+    background-color: yellow;
+}

@@ -1,0 +1,28 @@
+.pointsOfTeams{
+    background-color: #0007; 
+    padding: 2px; 
+  }
+  
+  .teamSquare{
+    width: 30%;
+    margin: 5px;
+    border-radius: 10px;
+    height: 90px;  
+    display: inline-block;
+    background-color: lavenderblush;
+  }
+  
+  .teamSquare:active{
+    background-color: lightseagreen;
+  }
+  
+  .teamName{
+    font-weight: 600;
+    display: block;
+  }
+  
+  .teamPoints{
+    display: block;
+    font-size: 40px;
+    color: red;
+  }

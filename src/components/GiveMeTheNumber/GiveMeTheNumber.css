@@ -1,0 +1,64 @@
+
+.informativaInicial{
+    padding: 5px;
+    background-color: #f3b6f3;
+    
+}
+
+.informativaInicial ul{
+    padding: 0px;
+}
+
+.sectionTemporitzador{
+    padding: 0px;    
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    
+}
+
+.temporitzador{
+    background-color: #f3b6f3;      
+    border-radius: 5px;
+    border: 1px solid white;
+    width: auto;
+    height: auto;
+    align-content: center;
+    font-size: 16px;
+    color: #320e2a;
+    margin: 2px 1px;
+    padding: 5px;
+    font-weight: 600;
+    initial-value: '400';    
+    
+}
+
+.preguntitas{
+    padding: 18px 8px;
+    font-size: 22px;
+    height: 100px;
+}
+
+.respostitas{
+    padding: 0px;    
+}
+
+.respostitas h2{
+    padding: 0px;
+    margin-top: 10px;
+    font-size: 32px;
+}
+
+
+.respostitas p{
+    color: grey;
+    padding: 0px;
+}
+
+.primerAvis{
+    color: white;
+    background-color:red;
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+}

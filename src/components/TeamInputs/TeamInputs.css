@@ -1,0 +1,28 @@
+
+  
+  
+  
+  .inputTeam {
+    font-size: 18px;
+    width: 50%;
+    border-radius: 5px;
+    height: 35px;
+  
+  }
+  
+  section label,h3 {
+    color: black;
+    margin: 8px 0px 0px 0px; 
+  
+  
+  }
+
+  .radio{
+    margin: 15px;
+    display: inline-block;
+    width: 25%;
+    font-weight: 500;
+    font-size: 19px;
+    background-color: red;
+    
+  }
