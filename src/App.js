@@ -22,7 +22,7 @@ export default function App() {
       <TeamInputs />*/
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<TeamInputs />} />
+          <Route path='/reusdereus' element={<TeamInputs />} />
           <Route path='/give-me-the-number' element={<GiveMeTheNumber />} />
           <Route path='/quantes-saps' element={<QuantesSaps />} />
           <Route path='/endevina-song' element={<EndevinaSong />} />
