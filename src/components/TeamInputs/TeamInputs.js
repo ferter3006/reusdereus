@@ -11,8 +11,6 @@ export default function TeamInputs() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  console.log(reus.team1Name);
-
   const onChange = (e) => {
     switch (e.target.id) {
       case "team1name":

@@ -14,7 +14,7 @@ export default function EndevinaSong() {
     const [randomSong, setRandomSong] = useState(Math.floor(Math.random() * SongArray.length))
 
     const audio = new Audio(SongArray[randomSong])
-    const pista = audio.src.split('/')[5].split('.')[0].split('%20').toString().replaceAll(',', ' ')
+    const pista = audio.src.split('/')[6].split('.')[0].split('%20').toString().replaceAll(',', ' ')
     const titul = pista.split(' - ')[0]
     const autor = pista.split(' - ')[1]
 
@@ -53,16 +53,14 @@ export default function EndevinaSong() {
             dispatch(setTeam3Points('endevinaSong'))
         }
 
-        
+
     }
 
     const nextSong = () => {
         let numeroRandom = Math.floor(Math.random() * SongArray.length)
         let alreadyUsed = ((element) => element === numeroRandom);
         while (lesUsades.some(alreadyUsed)) {
-            console.log('repetida?');
             if (lesUsades.length >= SongArray.length) { alert('error inesperado, dejara de funcionar con normalidad'); break; }
-            console.log(lesUsades.length, SongArray.length);
             let numeroRandom2 = Math.floor(Math.random() * SongArray.length)
             alreadyUsed = ((element) => element === numeroRandom2);
             numeroRandom = numeroRandom2
@@ -76,7 +74,7 @@ export default function EndevinaSong() {
             navigate('/una-de-dues')
         }
 
-        console.log(lesUsades);
+
     }
 
     const titulClick = () => {

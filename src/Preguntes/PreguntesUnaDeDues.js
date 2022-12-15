@@ -93,7 +93,7 @@ export const PreguntesUnaDeDues = [
     },
     {
         P: "De qui es la frase: La verdadera sabiduría está en reconocer la propia ignorancia?",
-        R: ["Sócrates", "Platón", "Belén Esteban, mentiendeeeeeeeS?"]
+        R: ["Sócrates", "Platón", "Belén Esteban"]
     },
     {
         P: "Qui va ser l'últim emperador Romá?",
