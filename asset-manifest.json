@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/reusdereus/static/css/main.0db77bb7.css",
-    "main.js": "/reusdereus/static/js/main.8a4c79f7.js",
+    "main.js": "/reusdereus/static/js/main.dab2dae1.js",
     "static/media/No dudaria - Antonio Flores.mp3": "/reusdereus/static/media/No dudaria - Antonio Flores.c904665cd4ff14174259.mp3",
     "static/media/Marta, Sebas, Guille y los demas - Amaral.mp3": "/reusdereus/static/media/Marta, Sebas, Guille y los demas - Amaral.24d55c00c1585fc6b570.mp3",
     "static/media/Tainted Love - Soft Cell.mp3": "/reusdereus/static/media/Tainted Love - Soft Cell.e6e5d85553635b64e7d3.mp3",
@@ -25,10 +25,10 @@
     "static/media/Funkytown - Lipps Inc.mp3": "/reusdereus/static/media/Funkytown - Lipps Inc.789818eba58ce660628f.mp3",
     "index.html": "/reusdereus/index.html",
     "main.0db77bb7.css.map": "/reusdereus/static/css/main.0db77bb7.css.map",
-    "main.8a4c79f7.js.map": "/reusdereus/static/js/main.8a4c79f7.js.map"
+    "main.dab2dae1.js.map": "/reusdereus/static/js/main.dab2dae1.js.map"
   },
   "entrypoints": [
     "static/css/main.0db77bb7.css",
-    "static/js/main.8a4c79f7.js"
+    "static/js/main.dab2dae1.js"
   ]
 }
