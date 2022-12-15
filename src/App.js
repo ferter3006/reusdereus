@@ -16,9 +16,8 @@ export default function App() {
     <div className='container'>
       <header>
         <h1>Reus<span className='de'>de</span>Reus</h1>
-        <p className='byferter'>by Ferter / versió Beta</p>
+        <p className='byferter'>by Ferter / versió Beta 0.1</p>
       </header>
-
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<TeamInputs/>} />
