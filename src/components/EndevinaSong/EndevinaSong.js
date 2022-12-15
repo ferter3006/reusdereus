@@ -33,9 +33,11 @@ export default function EndevinaSong() {
         if (audio.paused) {
             audio.play()
             document.getElementById('playButton').style.display = 'none'
+            document.getElementById('nextButton').style.display = 'none'
             setTimeout(() => {
                 audio.pause()
                 document.getElementById('playButton').style.display = ''
+                document.getElementById('nextButton').style.display = ''
             }, 15000);
         }
 
@@ -111,8 +113,9 @@ export default function EndevinaSong() {
                             <h3 className="titulAutor">{titul}</h3>
                             <p>{autor}</p>
                         </div>
-                        <button onClick={nextSong} className="regularButton" style={{ marginTop: '50px' }}>nextSong</button>
-
+                        <div className="btncontent">
+                            <button id="nextButton" onClick={nextSong} className="regularButton" style={{ marginTop: '50px' }}>nextSong</button>
+                        </div>
                     </div>
                 }
             </section>

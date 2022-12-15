@@ -16,7 +16,7 @@ export default function App() {
     <div className='container'>
       <header>
         <h1>Reus<span className='de'>de</span>Reus</h1>
-        <p className='byferter'>by Ferter / versió Beta 0.8.2</p>
+        <p className='byferter'>by Ferter / versió Beta 0.8.3</p>
       </header>
       <BrowserRouter>
         <Routes>

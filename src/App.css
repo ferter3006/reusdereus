@@ -81,7 +81,7 @@ section {
 
 
 .playSong {
-  background-color: #83c5be;
+  background-color: lightgreen;
   margin-top: 50px;
   height: 100px;
   border-radius: 50px;
@@ -89,11 +89,11 @@ section {
 }
 
 .playSong:hover {
-  background-color: white;
+  background-color: yellow;
 }
 
 .playSong:active {
-  background-color: #83c5be;
+  background-color: black;
   margin-top: 60px;
   margin-left: 16px;
   height: 100px;
@@ -115,5 +115,5 @@ section {
 .btncontent{
   margin: 0px;
   width: 100%;
-  height: 150px;
+  height: 140px;
 }
