@@ -13,13 +13,13 @@ import { PantallaFinal } from './components/PantallaFinal/PantallaFinal';
 export default function App() {
 
   return (
-    <div className='container'>
+    /*<div className='container'>
       <header>
         <h1>Reus<span className='de'>de</span>Reus</h1>
         <p className='byferter'>by Ferter / versió Beta 0.6</p>
         <TeamInputs />
       </header>
-      <TeamInputs />
+      <TeamInputs />*/
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<TeamInputs />} />
@@ -31,7 +31,7 @@ export default function App() {
         </Routes>
       </BrowserRouter>
 
-    </div>
+    /*</div>*/
   );
 }
 
