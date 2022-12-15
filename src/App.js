@@ -17,9 +17,7 @@ export default function App() {
       <header>
         <h1>Reus<span className='de'>de</span>Reus</h1>
         <p className='byferter'>by Ferter / versió Beta 0.7</p>
-        <TeamInputs />
       </header>
-      <TeamInputs />
       <BrowserRouter>
         <Routes>
           <Route path='/reusdereus' element={<TeamInputs />} />
