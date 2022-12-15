@@ -16,16 +16,16 @@ export default function App() {
     <div className='container'>
       <header>
         <h1>Reus<span className='de'>de</span>Reus</h1>
-        <p className='byferter'>by Ferter / versió Beta 0.8</p>
+        <p className='byferter'>by Ferter / versió Beta 0.8.1</p>
       </header>
       <BrowserRouter>
         <Routes>
           <Route path='/reusdereus' element={<TeamInputs />} />
-          <Route path='/reusdereus/give-me-the-number' element={<GiveMeTheNumber />} />
-          <Route path='/reusdereus/quantes-saps' element={<QuantesSaps />} />
-          <Route path='/reusdereus/endevina-song' element={<EndevinaSong />} />
-          <Route path='/reusdereus/una-de-dues' element={<UnaDeDues />} />
-          <Route path='/reusdereus/pantalla-final' element={<PantallaFinal />} />
+          <Route path='/give-me-the-number' element={<GiveMeTheNumber />} />
+          <Route path='/quantes-saps' element={<QuantesSaps />} />
+          <Route path='/endevina-song' element={<EndevinaSong />} />
+          <Route path='/una-de-dues' element={<UnaDeDues />} />
+          <Route path='/pantalla-final' element={<PantallaFinal />} />
         </Routes>
       </BrowserRouter>
 
