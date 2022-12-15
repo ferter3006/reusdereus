@@ -16,12 +16,11 @@ export default function App() {
     <div className='container'>
       <header>
         <h1>Reus<span className='de'>de</span>Reus</h1>
-        <p className='byferter'>by Ferter / versió Beta 0.4</p>
-      </header>
-      
+        <p className='byferter'>by Ferter / versió Beta 0.5</p>
+      </header>      
       <BrowserRouter>
       <Routes>
-        <Route path='/' element={<TeamInputs/>} />
+        <Route path='/' element={<h1>Hola</h1>} />
         <Route path='/give-me-the-number' element={<GiveMeTheNumber/>} />
         <Route path='/quantes-saps' element={<QuantesSaps/>} />        
         <Route path='/endevina-song' element={<EndevinaSong/>} />
