@@ -1,86 +1,129 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from 'react';
-import { PreguntesDonemElNumero } from "../../Preguntes/PreguntesGiveMeTheNumber"
 import TeamPoints from "../TeamPoints/TeamPoints";
 import InformativaInicial from "./InformativaInicial";
-import Temporitzador from "./Temporitzador";
-import { useDispatch } from "react-redux";
-import { setTeam1Points, setTeam2Points, setTeam3Points } from "../../features/reus/reusSlice";
+import Temporitzador from "../Temporitzador/Temporitzador";
+import { useDispatch, useSelector } from "react-redux";
+import { setTeam1Name, setTeam1Points, setTeam2Name, setTeam2Points, setTeam3Name, setTeam3Points, setUserAtributes } from "../../features/reus/reusSlice";
 import { useNavigate } from "react-router-dom";
+import PillaCookies from "../PillaCookies/PillaCookies";
 
 export default function GiveMeTheNumber() {
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    const reus = useSelector(state => state.reusdereus)    
 
     const [infoIni, setInfoIni] = useState(true)
     const [secciopreguntitas, setsecciopreguntitas] = useState(false)
-    const [contaQuestion, setContaQuestion] = useState(1)
-    const [lesUsades, setLesUsades] = useState([])
-    const [randomQuest, setRandomQuest] = useState(0)
-    const [jasuma, setJasuma] = useState(false)
 
+    const [tocaPregunta, setTocaPregunta] = useState('')
+    const [tocaResposta, setTocaResposta] = useState('')
+    const [tocaFont, setTocaFont] = useState('')
+    const [tocaID, setTocaID] = useState(0)
+    const [contadorFalten, setContadorFalten] = useState(0)
+    const [contadorCompletes, setContadorCompletes] = useState(0)    
+
+    // Quan hi ha un click per sumar punts d'un equip....
+    // el que fem es un post per suamr els punts i per posar
+    // la pregunta com "respondida" a la BD
     const handleClick = (e) => {
-
-        if (jasuma) {
-            if (e === "team1points") {
-                dispatch(setTeam1Points("giveMeTheNumber"))
-            }
-            if (e === "team2points") {
-                dispatch(setTeam2Points("giveMeTheNumber"))
-            }
-            if (e === "team3points") {
-                dispatch(setTeam3Points("giveMeTheNumber"))
-            }
-
-
-            let numeroRandom = Math.floor(Math.random() * PreguntesDonemElNumero.length)
-            let alreadyUsed = ((element) => element === numeroRandom);
-            while (lesUsades.some(alreadyUsed)) {
-                let numeroRandom2 = Math.floor(Math.random() * PreguntesDonemElNumero.length)
-                alreadyUsed = ((element) => element === numeroRandom2);
-            }
-            setRandomQuest(numeroRandom)
-            setLesUsades(prev => [...prev, numeroRandom])            
-            setContaQuestion(prev => (prev + 1))
-
-            if (contaQuestion === 15) {
-                navigate('/quantes-saps')
-            }
-        }
+        if (!secciopreguntitas) { return }
+        setsecciopreguntitas(false)
+        fetch(`${process.env.REACT_APP_API_ENDPOINT}/preguntesdonamelnumero/clickresposta`, {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${reus.user.apiToken}`,
+                'Content-Type': "application/json",
+                'Accept': "application/json",
+            },
+            body: JSON.stringify({
+                "pregunta_id": tocaID,
+                "game_id": reus.game.jocId,
+                "winner": e
+            })
+        })
+            .then((response) => response.json())
+            .then((jsonResponse) => {
+                if (jsonResponse.message) {
+                    return alert(jsonResponse.message)
+                }                
+                dispatch(setTeam1Points(jsonResponse.team1points))
+                dispatch(setTeam2Points(jsonResponse.team2points))
+                dispatch(setTeam3Points(jsonResponse.team3points))
+                if (contadorFalten === 1) {
+                    completaprova();
+                    return navigate('/quantessaps')
+                }
+                demanaPregunta();
+            });
     }
 
+    // Demanem la seguent pregunta que toca per respondre a la base de dades
+    // i actualitzem l'informació al State d'aquest component. 
+    const demanaPregunta = () => {        
+        fetch(`${process.env.REACT_APP_API_ENDPOINT}/preguntesdonamelnumero/game/${reus.game.jocId}`, {
+            headers: {
+                Authorization: `Bearer ${reus.user.apiToken}`,
+                'Content-Type': "application/json",
+                'Accept': "application/json",
+            }
+        })
+            .then((response) => response.json())
+            .then((jsonResponse) => {
+                if (jsonResponse.message) {                    
+                    return alert(jsonResponse.message)
+                }                
+                setTocaPregunta(jsonResponse.tocaPregunta)
+                setTocaResposta(jsonResponse.tocaResposta)
+                setTocaFont(jsonResponse.tocaFont)
+                setTocaID(jsonResponse.tocaID)
+                setContadorCompletes(jsonResponse.preguntesCompletades)
+                setContadorFalten(jsonResponse.preguntesFalten)
+                setsecciopreguntitas(true)
+            });
+    }
+
+    // Per teure la pantala informativa inicial i mostrar ja les preguntes:
     const readyGo = () => {
-
-        let numeroRandom = Math.floor(Math.random() * PreguntesDonemElNumero.length)
-        setRandomQuest(numeroRandom)
-        setLesUsades(prev => [...prev, numeroRandom])
-
+        demanaPregunta();
         setInfoIni(false);
         setsecciopreguntitas(true)
-        setJasuma(true);
+    }
 
+    // Marquem la prova com completada
+    const completaprova = () => {
+        fetch(`${process.env.REACT_APP_API_ENDPOINT}/preguntesdonamelnumero/completaprova/${reus.game.jocId}`, {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${reus.user.apiToken}`,
+                'Content-Type': "application/json",
+                'Accept': "application/json",
+            }
+        })
+            .then((response) => response.json())
+            .then((jsonResponse) => {
+                console.log(jsonResponse);
+            })
     }
 
     return (
-        <>
+        <>            
             <TeamPoints handleClick={handleClick} />
             {!infoIni ? null : <InformativaInicial readyGo={readyGo} />}
             {!secciopreguntitas ? null
                 : <>
-                    {contaQuestion !== 1 ? null : <p className="primerAvis">Clicka al equip que encerti la resposta per passar a la seguent</p>}
+                    {contadorCompletes !== 0 ? null : <p className="primerAvis">Clicka al equip que encerti la resposta per passar a la seguent</p>}
 
-                    <Temporitzador num={contaQuestion} />
+                    <Temporitzador falten={contadorFalten} completes={contadorCompletes} />
                     <section className="preguntitas">
-                        {PreguntesDonemElNumero[randomQuest].P}
+                        {tocaPregunta}
                     </section>
                     <section className="respostitas">
-                        <h2>{PreguntesDonemElNumero[randomQuest].R}</h2>
-                        <p>font: {PreguntesDonemElNumero[randomQuest].F}</p>
+                        <h2>{tocaResposta}</h2>
+                        <p className="font">font: {tocaFont}</p>
                     </section>
                 </>}
-
-
         </>
     )
 }

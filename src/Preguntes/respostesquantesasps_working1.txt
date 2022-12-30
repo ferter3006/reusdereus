@@ -1,0 +1,123 @@
+{
+        R: ["Arroz", "Agua o caldo", "Pollo de corral", "Conejo", "Judia verde plana", "Garrofó (haba de lima)", "Alcachofa", "Caracoles", "Aceite de oliva", "Pimentón dulce", "Tomate", "Azafrán", "Romero", "Sal"],
+    },
+    {
+        R: ["Kareem Abdul-JAabbar(6)", "Bill Russell(5)", "Michael Jordan(5)", "Wilt Chamberlain(4)", "LeBron James(4)", "Moses Malon(3)", "Larry Bird(3)", "Magic Johnson(3)"],
+    },
+    {
+
+        R: ["Waterloo", "Mamma mia", "Chiquitita", "Dancing Queen", "Gimme, gimme, gimme", "Super trouper", "I have a dream", "Fernando", "Does your mother know", "The winner takes it all"],
+
+    },
+    {
+
+        R: ["Esclat", "Bon preu", "Bonàrea", "Hpercor", "El corte inglés", "Hiper Usera", "Aldi", "Supercor", "Consum", "Alcampo", "Lidl", "Froiz", "Gadis", "Leclerc", "Mercadona", "Ahorramás", "Alimerka", "Eroski"],
+
+    },
+    {
+
+        R: ["Sympathy for the Devil", "Angie", "Undercover", "Satisfaction", "Paint it black", "Brown Sugar", "Gimme shelter", "Start me up", "Miss You", "Wild Horses"],
+
+    },
+    {
+
+        R: ["Red delicious", "Royal gala", "Fuji", "Pink Lady", "Granny Smith", "Reineta", "Golden"],
+
+    },
+    {
+
+        R: ["Miño", "Duero", "Tajo", "Ebro", "Guadiana", "Guadalquivis", "Júcar", "Segura"],
+
+    },
+    {
+
+        R: ["Praga", "Bolonia", "Montpellier", "Coimbra", "Heidelberg", "Amsterdam", "Cracovia", "Budapest", "Cardiff", "Lovaina"],
+
+    },
+    {
+
+        R: ["Saturno devorando a su hijo - Goya", "La maja desnuda - Goya", "Las 3 gracias - Rubens", "La crucifixión - Juan de flandes", "Las Meninas - Velázquez", "El Descendimiento - Van der Weyden", "El 3 de Mayo o Los Fusilamientos - goya", "La Anunciación - Fra Angélico", "El jardín de las delicias - El Bosco", "Autorretrato - Alberto Durero"],
+
+    },
+    {
+
+        R: ["Col. La Salle", "Col. Sant Josep", "Esc. Puigcerver", "Institució Espai Aura", "Inst. Baix Camp", "Inst. Doménech i Montaner", "Inst. Gabriel Ferrater", "Inst. Gaudí", "Inst. Roseta Mauri", "Inst. Salvador Vilaseca"],
+
+    },
+    {
+
+        R: ["La presentació", "La salle", "Maria Rosa Molas", "Pare Manyanet", "Sant Josep", "Sant Pau", "ARCE", "Maria Cortina", "Puigcerver", "Espai Aura"],
+    },
+    {
+        R: ["Oques", "Baluard", "Llibertat", "Pastoreta", "Psg. Prim", "St. Ferran", "Carrilet", "La Fira", "Hospital St.Joan", "Tecnoparc"],
+
+    },
+    {
+        R: ["Fotruny", "Bartrina", "Orfeó reusenc", "Santa Llúcia", "Brávium", "La Palma", "Cal Massó", "Teatre de l'Institut Baix Camp", "Teatre de la Salle"],
+    },
+    {
+        R: ["Vila-seca", "La Canonja", "Tarragona", "Constantí", "La Selva del camp", "Castellvell del camp", "Riudoms", "Almoster", "Aleixar"],
+    },
+    {
+        R: ["Sean Connery", "Roger Moore", "Pierce Brosnan", "Daniel Craig", "George Lazenby", "Timothy Dalton"],
+    },
+    {
+
+        R: ["Piminentos del piquillo", "Bacalao", "Cebolla", "Ajo", "Harina", "Leche", "Aceite", "Nata Líquida", "Gamba", "sal"],
+    },
+    {
+
+        R: ["Apple", "Microsoft", "Alphabet", "Amazon", "Meta (facebook)", "TSMC", "Nvidia", "Tencent", "Samsung", "Alibaba Group"],
+
+    },
+    {
+
+        R: ["Samsung", "Xiaomi", "Apple", "OPPO", "realme"],
+
+    },
+    {
+
+        R: ["Facebook", "Whatsapp", "Youtube", "Instagram", "TikTok", "LinkedIn", "Twitter", "Pinterest"],
+
+    },
+    {
+
+        R: ["Abeto - Avet", "Cedro", "Pino", "Sauce - Salze", "Chopo - Pollancre", "Platano - Plataner", "Olmo - Om", "Acacia", "Ciprés", "Encina - Alzina", "Prunus"],
+
+    },
+    {
+
+        R: ["Iceberg", "Romana", "Batavia", "Trocadero", "Fulla de Roure", "Lollo Rosa o Rosso", "Maravilla", "Radicchio", "Escarola", "Canónigos", "Endibias", "Cogollos de Tudela", "Rúcula"],
+    },
+    {
+        R: ["La milla verde", "La torre oscura", "Apocalipsis", "El misterio de Salem's Lot", "Misery", "Cementerio de animales", "Carrie", "It", "El resplandor"],
+    },
+    {
+
+        R: ["La conversación", "El fugitivo", "El despertar de la fuerza", "Blade Runner 2049", "Blade Runner", "Indiana Jones y la última cruzada", "El retorno del Jedi", "En busca del arca perdida", "Apocalypse now", "Una nueva esperanza", "El imperio contraataca"],
+
+    },
+    {
+        R: ["Pies descalzos", "Hips don't lie", "Waka-Waka", "Ciega, sordomuda", "Si te vas", "Loba", "La pared", "Suerte", "La tortura", "Inevitable"],
+    },
+    {
+        R: ["San Petersburgo 5.4M", "Barcelona 5.6M", "Madrid 6.6M", "Londres 9.3M", "Paris 11M", "Moscú 12.5M", "Estambul 15M"],
+
+    },
+    {
+
+        R: ["Australia", "Indonesia", "Rusia", "Estats Units", "Canadá", "Sudáfrica", "Colombia", "Mongolia", "Países Bajos", "Polonia"],
+
+    },
+    {
+
+        R: ["España", "Francia", "China", "Italia", "Turquía", "Estats Units", "Argentina", "Chile", "Portugal", "Rumania"],
+
+    },
+    {
+        R: ["China", "Rusia", "India", "Polonia", "Estats Units", "Ucrania", "Alemania", "Países Bajos", "Bielorrusia"],
+    },
+    {
+        R: ["Espanya", "Portugal", "Alemania", "Regne Unit", "Nova Zelanda", "Países Bajos", "Chile"],
+
+    }

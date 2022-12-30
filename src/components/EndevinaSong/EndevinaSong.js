@@ -14,7 +14,8 @@ export default function EndevinaSong() {
     const [randomSong, setRandomSong] = useState(Math.floor(Math.random() * SongArray.length))
 
     const audio = new Audio(SongArray[randomSong])
-    const pista = audio.src.split('/')[6].split('.')[0].split('%20').toString().replaceAll(',', ' ')
+    console.log(audio);
+    const pista = audio.src.split('/')[5].split('.')[0].split('%20').toString().replaceAll(',', ' ')
     const titul = pista.split(' - ')[0]
     const autor = pista.split(' - ')[1]
 

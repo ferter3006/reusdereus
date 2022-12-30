@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 
-export default function InformativaInicial({readyGo}) {
+export default function InformativaInicial({ readyGo }) {
 
     const sinonims = ['animalada', 'barbaritat', 'carretonada',
         'burrada', 'cabassada', 'carretada', 'fart', 'morterada', 'pluja',
@@ -10,7 +11,7 @@ export default function InformativaInicial({readyGo}) {
 
     const [randomPerSinonims, setRandomPerSinonims] = useState(Math.floor(Math.random() * sinonims.length))
 
-
+    const reus = useSelector(state => state.reusdereus);
     const canviaRandom = () => {
         setRandomPerSinonims(Math.floor(Math.random() * sinonims.length))
     }
@@ -30,8 +31,8 @@ export default function InformativaInicial({readyGo}) {
                 <li> Surtián 3 icones relatius a cada equip, apreta'l per informar quí ha guanyat els punts en cada pregunta i seguim jugant.</li>
                 <li> <strong>10 punts</strong> cada resposta correcte.</li>
             </ul>
+            {reus.game.jocId !== -999 ? <button className="regularButton" onClick={readyGo}>Inicia/Reanuda</button> : null}
 
-            <button className="regularButton" onClick={readyGo}>Dale!</button>
 
 
         </section>

@@ -14,30 +14,30 @@ export function SeleccionaWinLoser ({ handleClick }) {
 
     const siCLick = (e) => {
 
-        switch (e.target.id) {
+        switch (e.target.id) { 
             case "team1pointsw":
-                setGuanyador([20, 0, 0])
-                setStringGuanyador('team1points')
+                setGuanyador(['WIN', 0, 0])
+                setStringGuanyador('1')
                 break;
             case "team2pointsw":
-                setGuanyador([0, 20, 0])
-                setStringGuanyador('team2points')
+                setGuanyador([0, 'WIN', 0])
+                setStringGuanyador('2')
                 break;
             case "team3pointsw":
-                setGuanyador([0, 0, 20])
-                setStringGuanyador('team3points')
+                setGuanyador([0, 0, 'WIN'])
+                setStringGuanyador('3')
                 break;
             case "team1pointsl":
-                setPerdedor([-10, 0, 0])
-                setStringPerdedor('team1points')
+                setPerdedor(['LOSE', 0, 0])
+                setStringPerdedor('1')
                 break;
             case "team2pointsl":
-                setPerdedor([0, -10, 0])
-                setStringPerdedor('team2points')
+                setPerdedor([0, 'LOSE', 0])
+                setStringPerdedor('2')
                 break;
             case "team3pointsl":
-                setPerdedor([0, 0, -10])
-                setStringPerdedor('team3points')
+                setPerdedor([0, 0, 'LOSE'])
+                setStringPerdedor('3')
                 break;
 
             default:
@@ -58,6 +58,7 @@ export function SeleccionaWinLoser ({ handleClick }) {
             setmensaje('No pot guanyar i perdre el mateix equip...')
             return
         }
+        setmensaje('')
         handleClick(stringGuanyador, stringPerdedor)
     }
     return (

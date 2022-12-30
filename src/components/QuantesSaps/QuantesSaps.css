@@ -64,17 +64,7 @@
     margin-top: 30px;
 }
 
-.font {
-    padding: 4px 15px;
-    background-color: tomato;
-    color: aliceblue;
-    font-weight: 600;
-    width: auto;
-    display: inline-block;
-    margin-top: 8px;
-    border-radius: 20px;
-    border: 1px solid black;
-}
+
 
 .mesajeAlerta{
     color: red;
@@ -83,3 +73,4 @@
     font-weight: 600;
     background-color: yellow;
 }
+

@@ -8,28 +8,37 @@ import EndevinaSong from './components/EndevinaSong/EndevinaSong';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { UnaDeDues } from './components/UnaDeDues/UnaDeDues';
 import { PantallaFinal } from './components/PantallaFinal/PantallaFinal';
+import Login from './components/Login/Login';
+import Menu from './components/Menu/Menu';
+import LogoutButton from './components/LogoutButton/LogoutButton';
+import PillaCookies from './components/PillaCookies/PillaCookies';
 
 
 export default function App() {
 
   return (
-    <div className='container'>
-      <header>
-        <h1>Reus<span className='de'>de</span>Reus</h1>
-        <p className='byferter'>by Ferter / versió Beta 0.8.3</p>
-      </header>
-      <BrowserRouter>
+    <BrowserRouter>
+      <PillaCookies />
+      <div className='container'>
+        <header>
+          <h1>Reus<span className='de'>de</span>Reus</h1>
+          <LogoutButton />
+          <p className='byferter'>by Ferter / versió Beta 0.8.3</p>
+        </header>
         <Routes>
-          <Route path='/reusdereus' element={<TeamInputs />} />
-          <Route path='/give-me-the-number' element={<GiveMeTheNumber />} />
-          <Route path='/quantes-saps' element={<QuantesSaps />} />
-          <Route path='/endevina-song' element={<EndevinaSong />} />
-          <Route path='/una-de-dues' element={<UnaDeDues />} />
-          <Route path='/pantalla-final' element={<PantallaFinal />} />
+          <Route path='/' element={<Login />} />
+          <Route path='/menu' element={<Menu />} />
+          <Route path='/creargame' element={<TeamInputs />} />
+          <Route path='/donamelnumero' element={<GiveMeTheNumber />} />
+          <Route path='/quantessaps' element={<QuantesSaps />} />
+          <Route path='/endevinasong' element={<EndevinaSong />} />
+          <Route path='/unadedues' element={<UnaDeDues />} />
+          <Route path='/pantallafinal' element={<PantallaFinal />} />
         </Routes>
-      </BrowserRouter>
 
-    </div>
+
+      </div >
+    </BrowserRouter>
   );
 }
 

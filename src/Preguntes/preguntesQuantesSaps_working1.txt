@@ -1,0 +1,145 @@
+{
+        P: "Ingredients necesaris per elaborar la paella valenciana, recepta tradcional",
+        T: "I pa' mi que?",
+        F: "directoalpaladar.com"
+    },
+    {
+        P: "Guanyadors d'almenys 3 trofeus MVP De la NBA",
+        T: "Aquí hi ha molta altura",
+        F: "wikipedia.org"
+    },
+    {
+        P: "Les millors cançons d'ABBA",
+        T: "Quatre suecs",
+        F: "rankuzz.com"
+    },
+    {
+        P: "Les millors cadenes de supermercat",
+        T: "I tu on compres?",
+        F: "20minutos.es"
+    },
+    {
+        P: "Cançons més famoses de Rolling Stones",
+        T: "Roques antigues",
+        F: "entradas.com"
+    },
+    {
+        P: "Les millors varietats de pomes que existeixen",
+        T: "Newton se la sap!",
+        F: "comefruta.es"
+    },
+    {
+        P: "Els principals i més importants rius d'Espanya",
+        T: "Només si plou!",
+        F: "fundacionaquae.org"
+    },
+    {
+        P: "Destins amb encant preferits pels estudiants d'Erasmus 2020 (ciutats)",
+        T: "Llibreta, boli i maleta",
+        F: "isic.es"
+    },
+    {
+        P: "Obres imprescindibles per veure al museu El Prado de Madrid",
+        T: "La vestida no interessa",
+        F: "travesiasdigital.com"
+    },
+    {
+        P: "Centres on estudiar Batxillerat a Reus",
+        T: "De bat a bat",
+        F: "reus.cat"
+    },
+    {
+        P: "Centres d'educació infantil i primària concertats de Reus",
+        T: "Els més pijillus",
+        F: "reus.cat"
+    },
+    {
+        P: "Els pàrquings municipals de Reus",
+        T: "Anem de Shopping?",
+        F: "reus.cat"
+    },
+    {
+        P: "Els teatres de Reus",
+        T: "Ser o no ser?",
+        F: "teatresdereus.cat"
+    },
+    {
+        P: "Municipis fronterers amb Reus",
+        T: "Limítrofs",
+        F: "enciclopedia.cat"
+    },
+    {
+        P: "Millors actors que han interpretat James Bond",
+        T: "Llicéncia per matar",
+        F: "wikipedia.org"
+    },
+    {
+        P: "Ingredients necesaris per preparar 'Pimientos rellenos de bacalao y gambas'",
+        T: "Quins pebrots!",
+        F: "directoalpaladar.com"
+    },
+    {
+        P: "Les empreses tecnológiques més grans del món",
+        T: "Silicon Valley",
+        F: "es.fxssi.com"
+    },
+    {
+        P: "Marques de telefons móvils més venuts a Espanya 2022",
+        T: "Truque'm després",
+        F: "anovo.es"
+    },
+    {
+        P: "Les reds socials més utilitzades",
+        T: "Forats Negres",
+        F: "iebschool.com"
+    },
+    {
+        P: "Arbres més comuns als boscs espanyols",
+        T: "Llenya al mono",
+        F: "ajardina.es"
+    },
+    {
+        P: "Tipus d'enciams més consumits en espanya",
+        T: "Com a cunills",
+        F: "cocina-casera.com"
+    },
+    {
+        P: "Llibres més venuts de Stephen King",
+        T: "Una de por",
+        F: "revistagq.com"
+    },
+    {
+        P: "Les millors películes de Harrison Ford",
+        T: "Solo Ford",
+        F: "hobbyconsolas.com"
+    },
+    {
+        P: "Les millors cançons de Shakira",
+        T: "Pobre Piqué",
+        F: "stubhub.es"
+    },
+    {
+        P: "Ciutats del continent europeu amb més de 5 millons d'habitants",
+        T: "Molta gent",
+        F: "proyectotierra.org"
+    },
+    {
+        P: "Ranking mundial de països més exportadors de carbó 2021",
+        T: "I que caga el tió?",
+        F: "statista.com"
+    },
+    {
+        P: "Principals països productors de Vi",
+        T: "Bacco estará content",
+        F: "guarda14.com"
+    },
+    {
+        P: "Principals països productors de Patates",
+        T: "I les de Prades?",
+        F: "yara.es"
+    },
+    {
+        P: "Països amb, almenys, un 20% de producció eléctrica basada en eólica y solar (2021)",
+        T: "19 ja no val",
+        F: "datos.enerdata.net"
+    }
