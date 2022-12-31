@@ -31,6 +31,7 @@ export default function PillaCookies() {
     // aixo es en cas de refrescar la pagina
     useEffect(() => {
         if (reus.user.apiToken !== '') {
+            if (reus.game.jocId === -999) { return }
             getGameDades()
         }
     }, [reus.user.apiToken])
