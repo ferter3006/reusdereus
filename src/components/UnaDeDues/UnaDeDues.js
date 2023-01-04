@@ -1,25 +1,31 @@
 import React, { useEffect, useState } from "react"
 import TeamPoints from "../TeamPoints/TeamPoints";
 import { PreguntesUnaDeDues } from "../../Preguntes/PreguntesUnaDeDues";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setTeam1Points, setTeam2Points, setTeam3Points } from "../../features/reus/reusSlice";
 import { useNavigate } from "react-router-dom";
 
 export function UnaDeDues() {
 
+    const [tocaPregunta, setTocaPregunta] = useState('')
+    const [tocaResposta1, setTocaResposta1] = useState('')
+    const [tocaResposta2, setTocaResposta2] = useState('')
+    const [tocaResposta3, setTocaResposta3] = useState('')
+    const [tocaFont, setTocaFont] = useState('')
+    const [tocaId, setTocaID] = useState(0)
+    const [contadorCompletes, setContadorCompletes] = useState(0)
+    const [contadorFalten, setContadorFalten] = useState(0)
+    const [mostrem, setmostrem] = useState(false)
 
-    const [arrayRandom, setArrayRandom] = useState([])
+
     const [seccioPreguntes, setSeccioPreguntes] = useState(false)
-    const [numerPreguntaToca, setnumeroPreguntaToca] = useState(0)
-    const [enunciat, setEnunciat] = useState('')
-    const [resposta1, setResposta1] = useState({ text: '', valor: false })
-    const [resposta2, setResposta2] = useState({ text: '', valor: false })
-    const [resposta3, setResposta3] = useState({ text: '', valor: false })
+
     const [jasuma, setJasuma] = useState(false)
-    
+
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    const reus = useSelector(state => state.reusdereus)
 
 
     const handleClickPoints = (e) => {
@@ -35,94 +41,98 @@ export function UnaDeDues() {
         }
     }
 
-    useEffect(() => {
-        let arraytemporal = []
-
-        while (arraytemporal.length < 6) {
-
-            let numeroRandom = Math.floor(Math.random() * PreguntesUnaDeDues.length)
-            let alreadyUsed = (element) => element === numeroRandom;
-            while (arraytemporal.some(alreadyUsed)) {
-
-                let numeroRandom2 = Math.floor(Math.random() * PreguntesUnaDeDues.length)
-                alreadyUsed = (element) => element === numeroRandom2;
-                numeroRandom = numeroRandom2
+    const demanaPregunta = () => {
+        fetch(`${process.env.REACT_APP_API_ENDPOINT}/preguntesunadedues/game/${reus.game.jocId}`, {
+            headers: {
+                Authorization: `Bearer ${reus.user.apiToken}`,
+                'Content-Type': "application/json",
+                'Accept': "application/json",
             }
-            arraytemporal.push(numeroRandom)
-        }
-
-        setArrayRandom(arraytemporal)
-
-
-
-    }, []);
+        })
+            .then((response) => response.json())
+            .then((jsonResponse) => {
+                if (jsonResponse.message) {
+                    return alert(jsonResponse.message)
+                }
+                setTocaPregunta(jsonResponse.tocaPregunta)
+                setTocaResposta1(jsonResponse.tocaResposta1)
+                setTocaResposta2(jsonResponse.tocaResposta2)
+                setTocaResposta3(jsonResponse.tocaResposta3)
+                setTocaFont(jsonResponse.tocaFont)
+                setTocaID(jsonResponse.tocaID)
+                setContadorCompletes(jsonResponse.preguntesCompletades)
+                setContadorFalten(jsonResponse.preguntesFalten)
+                setmostrem(true)
+                console.log(jsonResponse);
+            });
+    }
 
 
     const handleClickDale = () => {
-
+        demanaPregunta()
         setJasuma(true)
         seccioPreguntes ? setSeccioPreguntes(false) : setSeccioPreguntes(true)
-        pintaPregunta()
     }
 
-    const pintaPregunta = () => {
 
-        setEnunciat(PreguntesUnaDeDues[arrayRandom[numerPreguntaToca]].P)
-        let x = Math.floor(Math.random() * 11)
 
-        if (x > 5) {
-            setResposta1({
-                text: PreguntesUnaDeDues[arrayRandom[numerPreguntaToca]].R[0],
-                valor: true
-            })
-            setResposta2({
-                text: PreguntesUnaDeDues[arrayRandom[numerPreguntaToca]].R[1],
-                valor: false
-            })
-        } else {
-            setResposta1({
-                text: PreguntesUnaDeDues[arrayRandom[numerPreguntaToca]].R[1],
-                valor: false
-            })
-            setResposta2({
-                text: PreguntesUnaDeDues[arrayRandom[numerPreguntaToca]].R[0],
-                valor: true
-            })
-        }
-
-        setResposta3({
-            text: PreguntesUnaDeDues[arrayRandom[numerPreguntaToca]].R[2],
-            valor: false
-        })
-
-        setnumeroPreguntaToca(numerPreguntaToca + 1)
-
-    }
-
+    // simplement pintem verd o vermell al clicar per visualitzar la resposta                                               
     const handleResposta = (valor, index) => {
-
+        console.log(valor, index);
         let color = valor ? 'lightgreen' : 'tomato'
 
         document.getElementById(index).style.backgroundColor = color
     }
 
+    const handleClick = (e) => {
+        console.log(e);
+        if (!mostrem) { return }
+        setmostrem(false)
+        fetch(`${process.env.REACT_APP_API_ENDPOINT}/preguntesunadedues/clickresposta`, {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${reus.user.apiToken}`,
+                'Content-Type': "application/json",
+                'Accept': "application/json",
+            },
+            body: JSON.stringify({
+                "pregunta_id": tocaId,
+                "game_id": reus.game.jocId,
+                "winner": e
+            })
+        })
+            .then((response) => response.json())
+            .then((jsonResponse) => {
+                if (jsonResponse.message) {
+                    return alert(jsonResponse.message)
+                }                
+                dispatch(setTeam1Points(jsonResponse.team1points))
+                dispatch(setTeam2Points(jsonResponse.team2points))
+                dispatch(setTeam3Points(jsonResponse.team3points))
+                if (contadorFalten === 1) {
+                    //completaprova();
+                    return navigate('/pantallafinal')
+                }
+                demanaPregunta();
+            });
+    }
+
     const NextPregunta = () => {
 
-        if (numerPreguntaToca < 6) { pintaPregunta() }
+        if (contadorFalten > 0) {
+            console.log('contador falten: ', contadorFalten);
+            // aki feiem pintapregunta
+        }
         else { navigate('/pantalla-final') }
-
-
 
         document.getElementById('resp1').style.backgroundColor = 'white'
         document.getElementById('resp2').style.backgroundColor = 'white'
         document.getElementById('resp3').style.backgroundColor = 'white'
-
-
     }
 
     return (
         <div>
-            <TeamPoints handleClick={handleClickPoints} />
+            <TeamPoints handleClick={handleClick} />
 
             <h2>Una<span className="de">de</span>Dues</h2>
             {seccioPreguntes ? null :
@@ -138,17 +148,16 @@ export function UnaDeDues() {
                     <button className="regularButton" onClick={handleClickDale}>Ok, Dale!</button>
                 </section>
             }
-            {!seccioPreguntes ? null :
+            {!mostrem ? null :
                 <section>
-                    <h3>{enunciat}</h3>
+                    <h3>{tocaPregunta}</h3>
                     <br />
                     <div className="tresRespostesDiv">
-                        <button id="resp1" onClick={() => handleResposta(resposta1.valor, 'resp1')} className="teamSquare">{resposta1.text}</button>
-                        <button id="resp2" onClick={() => handleResposta(resposta2.valor, 'resp2')} className="teamSquare">{resposta2.text}</button>
-                        <button id="resp3" onClick={() => handleResposta(resposta3.valor, 'resp3')} className="teamSquare">{resposta3.text}</button>
+                        <button id="resp1" onClick={() => handleResposta(tocaResposta1[1], 'resp1')} className="teamSquare">{tocaResposta1[0]}</button>
+                        <button id="resp2" onClick={() => handleResposta(tocaResposta2[1], 'resp2')} className="teamSquare">{tocaResposta2[0]}</button>
+                        <button id="resp3" onClick={() => handleResposta(tocaResposta3[1], 'resp3')} className="teamSquare">{tocaResposta3[0]}</button>
                     </div>
-                    <br />
-                    <button onClick={NextPregunta} className="regularButton">Next!</button>
+                    <div className="font">Segons: {tocaFont}</div>                    
 
                 </section>
             }

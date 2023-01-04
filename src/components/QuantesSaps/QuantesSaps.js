@@ -27,7 +27,8 @@ export default function QuantesSaps(){
             .then((response) => response.json())
             .then((jsonResponse) => {
                 console.log(jsonResponse);
-                return navigate('/endevinasong')
+                //return navigate('/endevinasong')
+                return navigate('/unadedues')
             })
     }
 

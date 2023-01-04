@@ -14,6 +14,8 @@ export default function MostraDuel({ completaProva }) {
     const [contadorCompletes, setContadorCompletes] = useState(0)
     const [contadorFalten, setContadorFalten] = useState(0)
     const [mostrem, setmostrem] = useState(false)
+    
+    const quinDuelToca = ['A vs B', 'A vs C', 'B vs A', 'B vs C', 'C vs A', 'C vs B']
 
     const reus = useSelector(state => state.reusdereus)
     const dispatch = useDispatch()
@@ -45,7 +47,7 @@ export default function MostraDuel({ completaProva }) {
             });
     }
 
-    const handleClickWinLoser = (guanya, perd) => {        
+    const handleClickWinLoser = (guanya, perd) => {
         setmostrem(false)
         fetch(`${process.env.REACT_APP_API_ENDPOINT}/preguntesquantessaps/clickresposta`, {
             method: 'POST',
@@ -84,6 +86,9 @@ export default function MostraDuel({ completaProva }) {
     return (
         <>
             <Temporitzador falten={contadorFalten} completes={contadorCompletes} />
+            <section className="sectionTemporitzador">
+                <div className="temporitzador">Duel: {quinDuelToca[contadorCompletes]}</div>
+            </section>
             {!mostrem ? null :
                 <>
                     <section>
